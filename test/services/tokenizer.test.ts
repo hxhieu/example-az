@@ -20,6 +20,21 @@ t.test("it should return a encode token", async (t) => {
   t.not(encoded, "");
 });
 
+t.test("it should generate 100,000 unique tokens", async (t) => {
+  // Mock the db
+  const mockDb = createMockDb(t);
+
+  // Execute
+  const tokens = await Promise.all(
+    Array.from(Array(100000).keys()).map((i) => encode(`item-${i}`, mockDb))
+  );
+
+  const uniqTokens = [...new Set(tokens)];
+
+  // Result all unique
+  t.equal(tokens.length, uniqTokens.length);
+});
+
 t.test("it should return a decode token", async (t) => {
   // Mock the db
   const mockDb = createMockDb(t);
