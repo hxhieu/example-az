@@ -6,7 +6,7 @@ const createMockDb = (t: any) =>
   // @ts-ignore
   t.createMock(db, {
     store: async <T>(obj: T): Promise<void> => {},
-    retrieve: async <T>(query: any): Promise<T | undefined> => undefined,
+    retrieve: async <T>(query: any): Promise<T | undefined | null> => undefined,
   });
 
 t.test("it should return a encode token", async (t) => {
