@@ -1,4 +1,9 @@
+# Example AZ
+
+![build badge](https://github.com/hxhieu/example-az/actions/workflows/code-build.yml/badge.svg)
+
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
+
 This project was bootstrapped with Fastify-CLI.
 
 ## Available Scripts
